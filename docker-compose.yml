@@ -24,7 +24,7 @@ services:
     container_name: backend-app
     restart: always
     ports:
-      - "9000:8000"  # Changed from 9000:9000 to 9000:8000
+      - "9000:8000"
     environment:
       - DATABASE_HOST=mysql-db
       - DATABASE_PORT=3306
@@ -46,7 +46,7 @@ services:
     ports:
       - "81:80"
     environment:
-      - BACKEND_URL=http://backend-app:8000  # Add this line
+      - BACKEND_URL=http://backend-app:8000
     depends_on:
       mysql:
         condition: service_healthy
